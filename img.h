@@ -1,0 +1,19 @@
+#ifndef IMG_H
+#define IMG_H
+
+#include <stdint.h>
+#include "sokol/sokol_gfx.h"
+
+typedef struct img_data {
+	int width;	
+	int height;	
+	int channels;
+
+	unsigned char* data;
+} img_data;
+
+img_data load_img_data_from_file(const char* path);
+void load_img_from_data(sg_image img, img_data data);
+void img_data_free(img_data data);
+
+#endif
